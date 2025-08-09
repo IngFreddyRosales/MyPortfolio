@@ -10,7 +10,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/home" replace />} />
         <Route path="/home" element={<MainPage />} />
-        {/* ...otras rutas */}
+        {/* Ruta catch-all para redirigir cualquier otra ruta */}
+        <Route path="*" element={<Navigate to="/home" replace />} />
       </Routes>
     </BrowserRouter>
   );
