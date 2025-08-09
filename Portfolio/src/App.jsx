@@ -5,16 +5,15 @@ import MainPage from './pages/mainPages.jsx'
 
 
 function App() {
-
   return (
-    <Router>
+    <BrowserRouter basename="/MyPortfolio">
       <Routes>
         <Route path="/" element={<Navigate to="/home" replace />} />
         <Route path="/home" element={<MainPage />} />
-
+        {/* ...otras rutas */}
       </Routes>
-    </Router>
-  )
+    </BrowserRouter>
+  );
 }
 
 export default App
