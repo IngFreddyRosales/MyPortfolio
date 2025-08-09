@@ -1,31 +1,49 @@
 import '../mainPages.css';
 import React, { useEffect, useRef } from 'react';
-import Projects from '../card/projects'; '../card/projects.jsx';
 import GradientText from './GradientText'
+import ChromaGrid from './ChromaGrid'
 
 export default function MainPage() {
     const canvasRef = useRef(null);
 
-    const projects = [
-        {
-            name: "Project 1",
-            description: "Description of project 1",
-            image: "/9441a2366fb7d1c49523aa75430ab95c.jpg",
-            gitLink: "https://github.com/user/project1"
-        },
-        {
-            name: "Project 2",
-            description: "Description of project 2",
-            image: "/9441a2366fb7d1c49523aa75430ab95c.jpg",
-            gitLink: "https://github.com/user/project2"
-        },
-        {
-            name: "Project 3",
-            description: "Description of project 3",
-            image: "/9441a2366fb7d1c49523aa75430ab95c.jpg",
-            gitLink: "https://github.com/user/project3"
-        }
-    ]
+    const items = [
+            {
+      image: "Captura de pantalla 2025-08-07 224023.png",
+      title: "Pokemon Advance",
+      description: "Pokemon management system with option to do teams",
+      borderColor: "#4F46E5",
+      gradient: "linear-gradient(145deg, #4F46E5, #000)",
+      url: "https://github.com/IngFreddyRosales?tab=repositories",
+      languageIcon: [ "/icons/javascript_original_logo_icon_146455.png", "/icons/react_original_logo_icon_146374.png"]
+    },
+    {
+      image: "Captura de pantalla 2025-08-07 234331.png",
+      title: "Management-Redes-vlsm",
+      description: "a network management system using the VLSM technique",
+      borderColor: "#CC66DA",
+      gradient: "linear-gradient(210deg,#CC66DA, #000)",
+      url: "https://github.com/IngFreddyRosales?tab=repositories",
+    },
+    {
+      image: "https://i.pravatar.cc/300?img=3",
+      title: "Morgan Blake",
+      description: "UI/UX Designer",
+      handle: "@morganblake",
+      borderColor: "#9929EA",
+      gradient: "linear-gradient(165deg, #9929EA, #000)",
+      url: "https://dribbble.com/",
+    },
+    {
+      image: "https://i.pravatar.cc/300?img=16",
+      title: "Casey Park",
+      description: "Data Scientist",
+      handle: "@caseypark",
+      borderColor: "#4169E1",
+      gradient: "linear-gradient(195deg, #4169E1, #000)",
+      url: "https://kaggle.com/",
+    }
+
+    ];
 
 
 
@@ -117,19 +135,14 @@ export default function MainPage() {
                 </GradientText>
             </header>
             <main className="card-project">
-                <div className="body-container">
-                    <h2>My projects</h2>
-                    <div className="projects-list">
-                        {projects.map((project, idx) => (
-                            <Projects
-                                key={idx}
-                                name={project.name}
-                                description={project.description}
-                                image={project.image}
-                                gitLink={project.gitLink}
-                            />
-                        ))}
-                    </div>
+                <div style={{ height: '900px', position: 'relative' }}>
+                    <ChromaGrid
+                        items={items}
+                        radius={300}
+                        damping={0.45}
+                        fadeOut={0.6}
+                        ease="power3.out"
+                    />
                 </div>
             </main>
         </div>

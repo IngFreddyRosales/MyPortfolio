@@ -38,7 +38,7 @@ header {
   color: #fff; /* Letras blancas */
   border-radius: 24px; /* Borde redondeado */
   overflow: hidden;
-  padding: 1rem 2rem;
+  margin-bottom: 100px;
   border: none;
 }
 
